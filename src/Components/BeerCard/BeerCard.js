@@ -1,5 +1,5 @@
 import React from 'react';
-import './BeerCard.scss';
+import './BeerCard.css';
 
 const BeerCard = ({ id, name, abv, tagline, beerPic }) => {
   return (

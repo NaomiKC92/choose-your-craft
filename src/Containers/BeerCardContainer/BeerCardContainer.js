@@ -12,6 +12,8 @@ class BeerCardContainer extends Component {
       .then(data => console.log(data))
   }
 
+  
+
 
 }
 
