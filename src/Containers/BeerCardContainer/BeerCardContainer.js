@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { getBeerList } from '../../apiCalls';
-import BeerCard from '../../Components/BeerCard/BeerCard'
+import BeerCard from '../../Components/BeerCard/BeerCard';
+import { setBeerList } from '../../Actions';
+import { connect } from 'react-redux';
 
 class BeerCardContainer extends Component {
   constructor() {
@@ -9,12 +11,38 @@ class BeerCardContainer extends Component {
 
   componentDidMount() {
     getBeerList()
-      .then(data => console.log(data))
+      .then(data => {
+        this.props.setBeerList(data)
+      })
   }
 
-  
+  render() {
+    const beerCards = this.props.beers.map( beer => {
+      console.log(beer)
+      return (
+        <BeerCard
+          beerPic={beer.image_url}
+          name={beer.name}
+          
+        />
+      )
+    })
 
-
+    return(
+      <main>
+        {beerCards}
+      </main>
+    )
+  }
 }
 
-export default BeerCardContainer;
+
+export const mapStateToProps = state => ({
+  beers: state.beers
+})
+
+export const mapDispatchToProps = dispatch => ({
+  setBeerList: (beers) => dispatch( setBeerList(beers))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(BeerCardContainer);

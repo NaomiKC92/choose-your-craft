@@ -4,7 +4,7 @@ import './BeerCard.css';
 const BeerCard = ({ id, name, abv, tagline, beerPic }) => {
   return (
     <div className='beer-card'>
-      <img src={beerPic} />
+      <img src={beerPic} className='beer-pic'/>
       <h2>{name}</h2>
       <p className='tag-line'>{tagline}</p>
       <p className='abv'>{abv}</p>
