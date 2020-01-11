@@ -1,0 +1,22 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.beer-pic {
+  width: 70px;
+}
+
+.beer-card {
+  align-items: center;
+  background-color: #062F4F;
+  border-radius: 5px;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  justify-content: flex-end;
+  margin: 30px;
+  width: 300px;
+}
