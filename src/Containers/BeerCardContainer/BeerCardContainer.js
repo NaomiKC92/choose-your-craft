@@ -21,9 +21,12 @@ class BeerCardContainer extends Component {
       console.log(beer)
       return (
         <BeerCard
+          id={beer.id}
           beerPic={beer.image_url}
           name={beer.name}
-          
+          abv={beer.abv}
+          tagline={beer.tagline}
+          key={beer.id}
         />
       )
     })
