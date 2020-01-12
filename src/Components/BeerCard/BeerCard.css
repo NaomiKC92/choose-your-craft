@@ -8,6 +8,10 @@ main {
   width: 70px;
 }
 
+.beer-icon {
+  width: 50px;
+}
+
 .beer-card {
   align-items: center;
   background-color: #062F4F;
