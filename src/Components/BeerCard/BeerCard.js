@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './BeerCard.css';
 import { Link } from 'react-router-dom';
+import beerIcon from '../../images/beer.svg'
 
-class BeerCard extends Component {
-  render() {
-    const { id, name, abv, tagline, beerPic } = this.props;
-    return (
-      <div className='beer-card'>
-        <img src={beerPic} className='beer-pic'/>
-        <h2>{name}</h2>
-        <p className='tag-line'>{tagline}</p>
-        <p className='abv'>Abv: {abv}</p>
-        <Link to={`beers/${id}`} className='more-details-btn'>More Details...</Link>
-      </div>
-    )
-  }
+const BeerCard = ({ id, name, abv, tagline, beerPic, addFavorite}) => {
+  
+  return (
+    <div className='beer-card'>
+      <img src={beerPic} className='beer-pic'/>
+      <h2>{name}</h2>
+      <p className='tag-line'>{tagline}</p>
+      <p className='abv'>Abv: {abv}</p>
+      <Link to={`beers/${id}`} className='more-details-btn'>More Details...</Link>
+      <img src={beerIcon} className='beer-icon not-favorited' onClick={addFavorite}/>
+    </div>
+  )
 };
 
 export default BeerCard
