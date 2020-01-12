@@ -3,3 +3,7 @@ export const setBeerList = beers => ({
   beers
 });
 
+export const addFavorite = beer => ({
+  type: 'ADD_FAVORITE',
+  beer
+});

@@ -11,10 +11,12 @@ class BeerCardContainer extends Component {
 
   componentDidMount() {
     getBeerList()
-      .then(data => {
-        this.props.setBeerList(data)
+      .then(beers => {
+        this.props.setBeerList(beers)
       })
   }
+
+
 
   render() {
     const beerCards = this.props.beers.map( beer => {

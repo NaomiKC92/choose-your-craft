@@ -3,7 +3,7 @@ import './BeerCard.css';
 import { Link } from 'react-router-dom';
 import beerIcon from '../../images/beer.svg'
 
-const BeerCard = ({ id, name, abv, tagline, beerPic }) => {
+const BeerCard = ({ id, name, abv, tagline, beerPic}) => {
   
   return (
     <div className='beer-card'>
