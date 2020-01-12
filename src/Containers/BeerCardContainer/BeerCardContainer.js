@@ -18,7 +18,6 @@ class BeerCardContainer extends Component {
 
   render() {
     const beerCards = this.props.beers.map( beer => {
-      console.log(beer)
       return (
         <BeerCard
           id={beer.id}
