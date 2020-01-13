@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { BeerCard, mapStateToProps } from './BeerCard';
 
-
 describe('BeerCard', () => {
 
   it('should match the snapshot', () => {
