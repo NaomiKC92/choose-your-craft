@@ -3,7 +3,6 @@ import { getBeerList } from '../../apiCalls';
 import BeerCard from '../../Components/BeerCard/BeerCard';
 import { setBeerList, addFavorite, updateBeerList } from '../../Actions';
 import { connect } from 'react-redux';
-import SearchForm from '../../Components/SearchForm/SearchForm';
 import './BeerCardContainer.css'
 
 
