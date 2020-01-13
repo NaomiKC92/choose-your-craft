@@ -1,7 +1,15 @@
+* {
+  font-family: 'Scada', sans-serif;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+h2 {
+  font-size: 170%;
 }
 
 .beer-pic {
@@ -16,11 +24,41 @@ main {
   align-items: center;
   background-color: #062F4F;
   border-radius: 5px;
-  color: #FFF;
+  border: 5px solid #FFF;
+  color: #B82601;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 30px;
+  padding: 15px;
+  width: 40%;
+}
+
+.card-basic-info {
   display: flex;
   flex-direction: column;
-  height: 600px;
-  justify-content: flex-end;
-  margin: 30px;
-  width: 300px;
+}
+
+.abv,
+.tag-line {
+  font-size: 140%;
+  margin-top: 5px;
+}
+
+.favorite-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.more-details-btn {
+  background-color: #813772;
+  color: #FFF;
+  border-radius: 2px;
+  width: 55%;
+  text-decoration: none;
+  align-self: center;
+  font-size: 120%;
+  padding: 8px;
+  border: 1px solid #FFF;
 }

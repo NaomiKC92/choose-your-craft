@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { beers } from '../../Reducers/BeerListReducer';
 import { connect } from "react-redux"
+import './Details.css'
 
 class Details extends Component {
   state = { 
@@ -41,14 +42,16 @@ class Details extends Component {
   render() {
     return (
       <section className='details-page'>
-        <h2>{this.state.name}</h2>
-        <p>{this.state.tagline}</p>
-        <p>Abv: {this.state.abv}</p>
-        <p>Srm: {this.state.srm}</p>
-        <p>First brewed: {this.state.first_brewed}</p>
-        <p>Description: {this.state.description}</p>
-        {/* <p>Ingredients: {this.state.ingredients}</p>
-        <p>Pairs well with: {this.state.food_pairing}</p> */}
+        <div className='details-card'>
+          <h2 className='details-title'>{this.state.name}</h2>
+          <p className='details-tagline'>{this.state.tagline}</p>
+          <p className='details-abv'>Abv: {this.state.abv}</p>
+          <p className='srm'>Srm: {this.state.srm}</p>
+          <p className='first-brewed'>First brewed: {this.state.first_brewed}</p>
+          <p className='description'>Description: {this.state.description}</p>
+          {/* <p>Ingredients: {this.state.ingredients}</p>
+          <p>Pairs well with: {this.state.food_pairing}</p> */}
+        </div>
       </section>
     )
   }
