@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { beers } from '../../Reducers/BeerListReducer';
 import { connect } from "react-redux"
 import './Details.css'
 

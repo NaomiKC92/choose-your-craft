@@ -5,7 +5,7 @@ export const beers = (state=[], action) => {
         return {...beer, isFavorited: false}
       });
     case 'UPDATE_BEER_LIST':
-      state = [...action.beers];
+      state = [...action.beers]
     default: 
       return state;
   }

@@ -4,10 +4,9 @@ import Details from './Details'
 import { mapStateToProps } from './Details'
 
 describe('Details', () => {
-  let wrapper, mockBeers
+  let wrapper
   beforeEach = () => {
-    wrapper = shallow(<Details />);
-    mockBeers = [{id:3, name: 'Pilsner', isFavorited: false}, {id:6, name: 'Lager', isFavorited: false}, {id:7, name: 'PaleAle', isFavorited: false}, ]
+    wrapper = shallow(<Details />)
   };
 
   it('should match the snapshot', () => {
