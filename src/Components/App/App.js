@@ -4,7 +4,6 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Details from '../Details/Details';
-import SearchForm from '../SearchForm/SearchForm';
 
 export const App = ({ beers }) => {
   return (
