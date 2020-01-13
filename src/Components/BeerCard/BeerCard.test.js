@@ -9,4 +9,13 @@ describe('BeerCard', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
+  it('should call updateFavorites when the beer icon is clicked', () => {
+    const mockUpdateFavorites = jest.fn();
+    const wrapper = shallow(<BeerCard updateFavorites={mockUpdateFavorites}/>);
+
+    wrapper.find('.beer-icon').simulate('click');
+
+    expect(mockUpdateFavorites).toHaveBeenCalled()
+  })
+
 })
