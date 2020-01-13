@@ -7,3 +7,8 @@ export const addFavorite = beerId => ({
   type: 'ADD_FAVORITE',
   beerId
 });
+
+export const updateBeerList = beers => ({
+  type: 'UPDATE_BEER_LIST',
+  beers
+});

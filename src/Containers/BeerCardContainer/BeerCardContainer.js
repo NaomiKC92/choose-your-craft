@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getBeerList } from '../../apiCalls';
 import BeerCard from '../../Components/BeerCard/BeerCard';
-import { setBeerList, addFavorite } from '../../Actions';
+import { setBeerList, addFavorite, updateBeerList } from '../../Actions';
 import { connect } from 'react-redux';
 
 class BeerCardContainer extends Component {
@@ -16,6 +16,16 @@ class BeerCardContainer extends Component {
       })
   }
 
+  updateFavorites = beerId => {
+    this.props.addFavorite(beerId);
+    const beerList = this.props.beers;
+    this.props.favorites.forEach(favoriteId => {
+      const index = beerList.findIndex(beer => beer.id === favoriteId);
+      beerList[index].isFavorited = true
+    })
+    this.props.updateBeerList(beerList)
+  }
+
   render() {
     const beerCards = this.props.beers.map( beer => {
       return (
@@ -26,7 +36,7 @@ class BeerCardContainer extends Component {
           abv={beer.abv}
           tagline={beer.tagline}
           key={beer.id}
-          addFavorite={this.props.addFavorite}
+          updateFavorites={this.updateFavorites}
         />
       )
     })
@@ -43,11 +53,12 @@ class BeerCardContainer extends Component {
 export const mapStateToProps = state => ({
   beers: state.beers,
   favorites: state.favorites
-})
+});
 
 export const mapDispatchToProps = dispatch => ({
   setBeerList: (beers) => dispatch( setBeerList(beers)),
-  addFavorite: (beer) => dispatch( addFavorite(beer))
+  addFavorite: (beer) => dispatch( addFavorite(beer)),
+  updateBeerList: (beers) => dispatch( updateBeerList(beers))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BeerCardContainer);
