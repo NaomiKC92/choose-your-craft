@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 //import mapState
 //conditionally rendering from there
 
-const BeerCard = ({ id, name, abv, tagline, beerPic, updateFavorites}) => { 
+export const BeerCard = ({ id, name, abv, tagline, beerPic, updateFavorites}) => { 
   return (
     <div className='beer-card'>
       <img src={beerPic} className='beer-pic'/>
