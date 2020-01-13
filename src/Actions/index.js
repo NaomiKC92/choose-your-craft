@@ -12,3 +12,8 @@ export const updateBeerList = beers => ({
   type: 'UPDATE_BEER_LIST',
   beers
 });
+
+export const search = value => ({
+  type: 'SEARCH',
+  value
+});

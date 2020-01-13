@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #000;
 }
 
 .App-logo {
@@ -35,4 +36,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  font-family: 'Shrikhand', cursive;
+  font-size: 285%;
+  margin: 0;
+  color: #FFF;
+  padding: 20px;
 }
