@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
 import { shallow } from 'enzyme';
+import { mapStateToProps } from './App'
 
 describe('App', () => {
   xit('should match the snapshot', () => {
@@ -12,9 +12,19 @@ describe('App', () => {
   describe('mapStateToProps', () => {
     it('should return an object with the beers array', () => {
       const mockState = {
-        beers: [{name: 'Trashy Blond', abv: 4.2}]
+        beers: [
+          {name: 'Trashy Blond', abv: 4.2}
+        ]
       }
 
+      const expected = {
+        beers: [
+          {name: 'Trashy Blond', abv: 4.2}
+        ]
+      }
+
+      const mappedProps = mapStateToProps(mockState);
+      expect(mappedProps).toEqual(expected)
     });
   });
 
