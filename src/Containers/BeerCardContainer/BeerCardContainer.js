@@ -29,6 +29,11 @@ class BeerCardContainer extends Component {
     this.props.updateBeerList(beerList)
   }
 
+  showFavorites = () => {
+    let favorites = this.props.beers.filter(beer => beer.isFavorited === true)
+    this.props.setBeerList(favorites)
+  }
+
   render() {
     const beerCards = this.props.beers.map( beer => {
       return (
@@ -46,8 +51,10 @@ class BeerCardContainer extends Component {
 
     return(
       <main>
-        {beerCards}
-        <SearchForm />
+        <button onClick={this.showFavorites} className='show-fav-btn'>Show Favorites</button>
+        <section className='card-display'>
+          {beerCards}
+        </section>
       </main>
     )
   }

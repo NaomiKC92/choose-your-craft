@@ -1,3 +1,21 @@
 main {
+  display: flex;
+  flex-direction: column;
   background-color: #000;
+  align-items: center;
+}
+
+.card-display {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.show-fav-btn {
+  width: 25%;
+  background-color: #B82601;
+  color: #FFF;
+  height: 50px;
+  border: 2px solid #FFF;
+  border-radius: 3px;
+  font-size: 120%;
 }
