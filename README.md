@@ -28,5 +28,11 @@ This app allows the user to view a list of beers and click on the 'more details'
 #### Home Page
 ![Home](src/images/home.png)
 
+#### Details Page
+![Home](src/images/details.png)
+
+#### Showing Favorites
+![Home](src/images/favorites.png)
+
 
 
