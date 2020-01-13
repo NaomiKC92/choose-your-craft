@@ -2,18 +2,12 @@
   font-family: 'Scada', sans-serif;
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 h2 {
   font-size: 170%;
 }
 
 .beer-pic {
-  width: 70px;
+  width: 20%;
 }
 
 .beer-icon {
@@ -34,9 +28,12 @@ h2 {
   width: 40%;
 }
 
-.card-basic-info {
+.basic-info {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  height: 300px;
+  width: 60%;
 }
 
 .abv,
@@ -61,4 +58,16 @@ h2 {
   font-size: 120%;
   padding: 8px;
   border: 1px solid #FFF;
+}
+
+.more-details-btn:hover,
+button:hover {
+  background-color: #000;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.more-details-btn:active,
+button:active {
+  transform: scale(.97);
 }
