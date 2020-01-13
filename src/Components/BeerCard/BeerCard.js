@@ -2,7 +2,7 @@ import React from 'react';
 import './BeerCard.css';
 import { Link } from 'react-router-dom';
 import beerIcon from '../../images/beer.svg';
-import favorites from '../../Reducers/AddFavoriteReducer';
+import { favorites } from '../../Reducers/AddFavoriteReducer';
 import { connect } from 'react-redux';
 
 //import favorites form reducers
@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 //import mapState
 //conditionally rendering from there
 
-const BeerCard = ({ id, name, abv, tagline, beerPic, updateFavorites}) => {
+const BeerCard = ({ id, name, abv, tagline, beerPic, updateFavorites}) => { 
   return (
     <div className='beer-card'>
       <img src={beerPic} className='beer-pic'/>
