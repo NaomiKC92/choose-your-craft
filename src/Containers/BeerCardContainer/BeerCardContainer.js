@@ -7,9 +7,6 @@ import './BeerCardContainer.css'
 
 
 class BeerCardContainer extends Component {
-  constructor() {
-    super();
-  }
 
   componentDidMount() {
     getBeerList()
