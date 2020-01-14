@@ -29,10 +29,13 @@ This app allows the user to view a list of beers and click on the 'more details'
 ![Home](src/images/home.png)
 
 #### Details Page
-![Home](src/images/details.png)
+![Details](src/images/details.png)
 
 #### Showing Favorites
-![Home](src/images/favorites.png)
+![Favorites](src/images/favorites.png)
+
+### Link to Project Board
+https://github.com/NaomiKC92/choose-your-craft/projects
 
 
 
