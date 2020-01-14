@@ -37,6 +37,39 @@ describe('BeerCardContainer', () => {
     expect(getBeerList).toHaveBeenCalled()
   });
 
+  it('should call setBeerList with beers array when getBeerList is called', () => {
+    expect(mockSetBeerList).toHaveBeenCalled()
+
+    expect(mockSetBeerList).toHaveBeenCalledWith(mockBeers)
+  });
+
+
+  describe('updateFavorites', () => {
+    it('should call addFavorite when updateFavorites is called', () => {
+      const mockBeer = {id:3, name: 'Pilsner', isFavorited: false}
+      wrapper.instance().updateFavorites(mockBeer.id)
+
+      expect(mockAddFavorite).toHaveBeenCalledWith(mockBeer.id)
+    });
+
+    it('should call updateBeerList when updateFavorites is called', () => {
+      const mockBeer = {id:3, name: 'Pilsner', isFavorited: false}
+      
+      wrapper.instance().updateFavorites(mockBeer.id);
+
+      expect(mockUpdateBeerList).toHaveBeenCalledWith(mockBeers);
+    });
+  });
+
+  describe('showFavorites', () => {
+    it('should call setBeerList when showFavorites is called', () => {
+      wrapper.instance().showFavorites()
+
+      expect(mockSetBeerList).toHaveBeenCalled()
+    });
+  });
+
+
   describe('mapStateToProps', () => {
     it('should return an object with the list of beers', () => {
       const mockState = {

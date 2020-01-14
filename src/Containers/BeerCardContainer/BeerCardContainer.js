@@ -23,7 +23,7 @@ export class BeerCardContainer extends Component {
       beerList[index].isFavorited = true
     })
     this.props.updateBeerList(beerList)
-  }
+  };
 
   showFavorites = () => {
     let favorites = this.props.beers.filter(beer => beer.isFavorited === true)
