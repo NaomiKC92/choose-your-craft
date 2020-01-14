@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux"
 import './Details.css'
 
-class Details extends Component {
+export class Details extends Component {
   state = { 
     name: "",
     tagline: "",
@@ -23,7 +23,7 @@ class Details extends Component {
     return beersList.find(beer => {
       return beer.id === parseInt(this.props.match.params.id);
     })
-  }
+  };
 
   updateBeer = (beer) => {
     this.setState({
