@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import './BeerCardContainer.css'
 
 
-class BeerCardContainer extends Component {
+export class BeerCardContainer extends Component {
 
   componentDidMount() {
     getBeerList()
@@ -23,7 +23,7 @@ class BeerCardContainer extends Component {
       beerList[index].isFavorited = true
     })
     this.props.updateBeerList(beerList)
-  }
+  };
 
   showFavorites = () => {
     let favorites = this.props.beers.filter(beer => beer.isFavorited === true)
