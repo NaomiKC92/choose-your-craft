@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import './BeerCardContainer.css'
 
 
-class BeerCardContainer extends Component {
+export class BeerCardContainer extends Component {
 
   componentDidMount() {
     getBeerList()

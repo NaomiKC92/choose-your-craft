@@ -1,27 +1,40 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { BeerCardContainer, mapStateToProps, mapDispatchToProps } from '../../Containers/BeerCardContainer/BeerCardContainer'
 import { setBeerList, addFavorite, updateBeerList } from '../../Actions';
 import { getBeerList } from '../../apiCalls';
+import { BeerCardContainer, mapDispatchToProps, mapStateToProps } from './BeerCardContainer'
 
 jest.mock('../../apiCalls.js')
 
 describe('BeerCardContainer', () => {
-  let wrapper
-  beforeEach = () => {
+  let wrapper, mockBeers, mockFavorites, mockSetBeerList, mockAddFavorite, mockUpdateBeerList
+  beforeEach( () => {
+    mockBeers = [
+      {id:3, name: 'Pilsner', isFavorited: false}, {id:5, name: 'PaleAle', isFavorited: false}
+    ]
+    mockFavorites = []
+    mockSetBeerList = jest.fn();
+    mockAddFavorite = jest.fn();
+    mockUpdateBeerList = jest.fn();
     getBeerList.mockImplementation( () => {
       return Promise.resolve([{id:3, name: 'Pilsner', isFavorited: false}, {id:5, name: 'PaleAle', isFavorited: false}])
     });
 
-    wrapper = shallow(<BeerCardContainer />)
-  }
-
-  xit('should call getBeerList when component mounts', () => {
-    expect(getBeerList).toHaveBeenCalled()
-  });
+    wrapper = shallow(<BeerCardContainer 
+      beers={mockBeers}
+      favorites={mockFavorites}
+      setBeerList={mockSetBeerList}
+      addFavorite={mockAddFavorite}
+      updateBeerList={mockUpdateBeerList}
+    />)
+  })
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+  
+  it('should call getBeerList when component mounts', () => {
+    expect(getBeerList).toHaveBeenCalled()
   });
 
   describe('mapStateToProps', () => {
